@@ -1,0 +1,18 @@
+Let us have another look at the creation of posts.
+
+Rightclick on the form where you can write your next post and use "Inspect Element"(Firefox) again.
+
+There is hidden data here!
+<input type="hidden" name="user_id" value="2">		(Logged in as "user")
+
+It seems that not only the Posts have an id, the users do also have one...
+Wondering who the user with the id 1 is?
+
+Change the value to 1.
+<input type="hidden" name="user_id" value="1">
+
+Write some text in the form and post it!
+
+Your text is now posted with the Author: admin!
+
+Also you are rewarded with the Flag!

@@ -1,0 +1,20 @@
+After starting the challenge you will see a Welcome Page to Postbook.
+
+You can either Sign up or Sign in.
+
+Use Sign up and create a account for yourself.
+Log in with your Username and Password.
+
+Now you can see a Post timeline in which you can see Posts by the Users:
+user
+admin
+
+Now we know at least two of the usernames for this site!
+
+Now we can try to access one of the accounts with simple guessing work - bruteforcing the password.
+
+Try simple passwords for the "user" account.
+
+With the password "password" you can login.
+
+You are now rewarded with the flag!

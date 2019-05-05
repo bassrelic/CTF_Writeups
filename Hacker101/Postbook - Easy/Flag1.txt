@@ -1,0 +1,30 @@
+Lets create a new Post with our newly acquired account.
+
+On the top of the timeline you can see a field which says "What's on your mind?".
+Type something for testing purposes.
+
+NOTE: there is a checkbox saying "For my own eyes only".
+Maybe there is a way to acquire private posts from other users?
+
+First, lets create a normal post as reference.
+Now, lets create a private post.
+Click the checkbox saying "For my own eyes only" and post your text.
+
+Now lets inspect the Site:
+Rightklick on the normal Post and select "Inspect Element"(Firefox)
+You can see that this element has the id 4: index.php?page=view.php&id=4
+
+Now check the Secret post to see where they differ.
+Notice that the post was created just like a normal post with a incrementing id!
+Thus the secret post has the id 5: index.php?page=view.php&id=5
+
+A quick look on the timeline reveals that there are only four posts visible to you.
+Maybe there is another secret post?
+
+Paste the $_GET string into your search bar.
+
+Now lets try to find the missing post by altering the id.
+
+It seems that the admin tried the secret feature of his website. The posts ID is 2!
+
+You are rewarded with the secret thoughts of the admin and with the Flag you are looking for!
