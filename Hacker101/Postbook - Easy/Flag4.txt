@@ -1,0 +1,11 @@
+Maybe there is a way to edit other peoples posts?
+
+Go to "My profile".
+
+Rightclick on "edit" and select "Inspect Element".(Firefox)
+Change the id to 2 (the post made by the admin).
+Click on edit.
+
+Change the admins post as you like and Post it.
+
+You will now be rewarded with a Flag!
