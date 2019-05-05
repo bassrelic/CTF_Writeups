@@ -28,3 +28,22 @@ Now lets try to find the missing post by altering the id.
 It seems that the admin tried the secret feature of his website. The posts ID is 2!
 
 You are rewarded with the secret thoughts of the admin and with the Flag you are looking for!
+
+~~~~~~~~~~~~~~~~ Alternative Way ~~~~~~~~~~~~~~~~~~~~~~~~
+
+Click on the my Profile tab.
+All of our posts are listed there.
+Maybe there is a way to see the profile site of other users?
+
+Rightklick on "My Profile" and select "Inspect Element"(Firefox)
+There is another id...
+index.php?page=profile.php&id=c
+I wonder who has the id before us...
+
+Change the id to b!
+index.php?page=profile.php&id=b
+
+Now click on "My Profile"
+Now we can see all posts made my the admin!
+
+Click on the Post "Dear diary..." and take your reward!
