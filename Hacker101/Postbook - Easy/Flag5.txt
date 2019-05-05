@@ -1,0 +1,58 @@
+How do we stay signed in after providing our login information?
+There is probably a cookie!
+Can we alter this cookie to become admin?
+
+Sign in with any account (i am using user)
+Let us check for cookies.
+Right click on the page and select "Inspect Element" anywhere.(firefox)
+
+Navigate to "Storage Inspector" and open the "Cookies" dropdown on the left.
+There is a Cookie named id!
+The data inside is not readable, maybe it is a hash?
+Copy the ID.
+c81e728d9d4c2f636f067f89cc14862c
+
+Now paste it into a decryptor tool.
+I am using md5hashing.net for this purpose.
+
+Paste the Data into the "Hash String" field to the right.
+Select "Search by all hash types" in the "Hash type" field.
+Click Decode!
+
+A Md5 hash was found!
+The data we obtained are decrypted to "2".
+The hash used was:
+c81e728d9d4c2f636f067f89cc14862c
+
+Copy this hash and paste it into the field "Hash String"
+As "Hash type" we can now select Md5.
+As we know, the admin has a lower id than us.
+Put a 1 into the text field to the left and hash it.
+
+The resulting Data is:
+c4ca4238a0b923820dcc509a6f75849b
+
+Paste it into your cookie in the "Storage Inspector".
+Now click on "My profile"
+
+We are admin now!
+
+Navigate to Home and aquire your Flag.
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~ BONUS ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Noone likes to always past the hashed data into a cookie to become admin.
+Let us acquire / change the admins password shall we?
+
+Navigate to Settings.
+Now you could change the password right away.
+
+But what is his password? Could we have guessed it easily?
+
+Right clik into the password field and select "Inspect Element".(firefox)
+
+There is his password in plain text!
+@9(a(QuDHwJq3[@2EDU2%K,j*Af]p8wZV]f
+
+With a brute force method we would probably need a few more days.
