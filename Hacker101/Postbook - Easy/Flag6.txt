@@ -1,0 +1,42 @@
+Lets have another look at the "My profile" tab.
+There is the option to delete our posts.
+
+Maybe the admin would be surprised to see that his posts start to disappear?
+
+Right click on "delete" and select "Inspect Element"(Firefox).
+There is another id!
+
+This time it seems to be more complicated.
+index.php?page=delete.php&id=eccbc87e4b5ce2fe28308fd9f2a7baf3
+
+Maybe it was generated using a hash?
+Copy the id and paste it into a decrypt tool.
+I am using md5hashing.net for this purpose.
+
+Paste the id into the field "Hash" on the right (Decrypt).
+We do not know which hash could have ben used so select under "Hash type" "Search by all hash types".
+Click Decode!
+
+A hash was found (Md5):
+eccbc87e4b5ce2fe28308fd9f2a7baf3
+
+In my Case the decoded value is 3.
+That is the id of the Post itself!
+
+Let us target the diary of our admin.
+The id of his post is 2, so let us hash this id with the found hash!
+
+Copy the hash and post it in the field "Hash String".
+Select Md5 as "Hash Type".
+Write the desired id (2) into the text field on the left.
+Click "Hash it!" !
+
+The resulting id is:
+c81e728d9d4c2f636f067f89cc14862c
+
+Let us paste this into the id parameter:
+index.php?page=delete.php&id=c81e728d9d4c2f636f067f89cc14862c
+
+Now Click delete.
+
+The admins post is gone and you are rewarded with the Flag!
