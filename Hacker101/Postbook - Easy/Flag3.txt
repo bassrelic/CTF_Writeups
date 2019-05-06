@@ -1,0 +1,11 @@
+To be honest, i have no idea how you would find this flag without the hint for it.
+I could not find anything more after completing the other six flags.
+
+If we Check the hint, it says:
+189 * 5
+
+So the hint is 945.
+I figured this could be an ID - even tough it is way higher than any other id we have seen so far.
+
+After some trial and error, i found the flag while viewing the post with id 945.
+/index.php?page=view.php&id=945
