@@ -9,3 +9,8 @@ I figured this could be an ID - even tough it is way higher than any other id we
 
 After some trial and error, i found the flag while viewing the post with id 945.
 /index.php?page=view.php&id=945
+
+I created a python script using https://github.com/kazuar/login_scraper_example/blob/master/login_scraper_example.py as template.
+The script logs in using the user account and checks for the FLAG in every post id in a specified range.
+
+There is probably a easier way to find this Flag though - Still looking for it.
