@@ -1,0 +1,14 @@
+Add a item to your cart by klicking on "Add to Cart"
+
+You get redirected to your Shopping Cart.
+
+I wonder how the checkout works.
+Rightklick on the "Check Out" button and select "Inspect Element"(Firefox).
+
+Checkout has a hidden field assigned to it!
+The price is written in clear text, let's change the to something more affordable.
+How about... 0$?
+
+Change the value and klick on the "Check Out" button.
+
+You are now rewarded with a free pet and a flag.
