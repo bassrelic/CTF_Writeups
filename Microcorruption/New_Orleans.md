@@ -26,15 +26,15 @@ If we take a look at the Disassembly information, we can see that just before th
 **Reset** the controller and **c**ontinue until we hit the breakpoint.
 Let us **s**tep to the next instruction.
 
-\<create password\> seems not to be doing much, it simply moves some hex values into r15. Those values are **0x2E 0x30 0x54 0x3D 0x40 0x39 0x31 0x00**. Let us take a look what happens next. Lets set another breakpoint at address **444a**. If we **c**ontinue now, we will skip the <puts> method used to output the "Enter the password to continue" prompt. This method should not be of high interest for us at the moment. 
+\<create password\> seems not to be doing much, it simply moves some hex values into r15. Those values are **0x2E 0x30 0x54 0x3D 0x40 0x39 0x31 0x00**. Let us take a look what happens next. Lets set another breakpoint at address **444a**. If we **c**ontinue now, we will skip the \<puts\> subroutine used to output the "Enter the password to continue" prompt. This subroutine should not be of high interest for us at the moment. 
 
-Let us **s**tep through it. This method calls \<getsn\>. This seems to be the method responsible to promt for the password. Let us input *test* again.
+Let us **s**tep through it. This subroutine calls \<getsn\>. This seems to be the subroutine responsible to promt for the password. Let us input *test* again.
 Let's **s**tep further. Having a look at the Live Memory Dump, we can see that *test* is written to **439C til 439F**. So that is what should be tested against the correct password. Lets note this mentally. 
 
 When **s**tepping a few more times we see the call to \<check_password\> let us see how the password is checked. We notice, that **439C** is still held in r15. It is moved to r13 and subsequently r14 is added to r13. r14 is zero at the moment so this does not change anything. Next the value at address **439C** (which is the first character of the password we choose) is compared to whatever is at address 0x2400. This could already be the password we are looking for! 
 **.0T=@91** is our candidate for the password. Before we try it however, let us see what happens next. JNE is executed which jumps if the zero bit is not set. Zero is not set at the moment so this should result in a jump to <check_password+0x16> which is equal to address **44D2** causing the register r15 to be reset and the execution of a ret command. It seems like the password check has failed at this point.
 
-Let us try the string we found earlier in order to open the lock. It seems to be pretty clear that this must be the data the method \<check_password\> is comparing against. Let us **reset** the controller and **c**ontinue without breakpoints. When prompted to input the password we input the found string **.0T=@91** or the hex values **0x2E 0x30 0x54 0x3D 0x40 0x39 0x31 0x00** found even earlyer (you need to tick the checkbox if you are going with the hex values). We **c**ontinue again and get the prompt "Door Unlocked". 
+Let us try the string we found earlier in order to open the lock. It seems to be pretty clear that this must be the data the subroutine \<check_password\> is comparing against. Let us **reset** the controller and **c**ontinue without breakpoints. When prompted to input the password we input the found string **.0T=@91** or the hex values **0x2E 0x30 0x54 0x3D 0x40 0x39 0x31 0x00** found even earlyer (you need to tick the checkbox if you are going with the hex values). We **c**ontinue again and get the prompt "Door Unlocked". 
 
 The last thing to do now is to follow the instructions, **reset** the controller and type **solve** in order to open the lock. Type the password one last time and we are in!
 
